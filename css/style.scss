@@ -1,3 +1,53 @@
-root {
-  $white: #fbfbfb;
+/* global */
+
+/* Colors */
+$color-white: #ffffff;
+$color-black: #050a13;
+$color-blue: #03e8f9;
+$color-orange: #fd6413;
+$color-gray: #1b1e26;
+
+/* App Colors */
+$color-primary: $color-black;
+$color-primary-variant: $color-gray;
+$color-accent: $color-blue;
+$color-accent-variant:$color-orange;
+$color-text: $color-white;
+
+body {
+  max-width: 1970px;
+  background-color: $color-white;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+p,
+ul {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: $color-text;
+}
+
+button {
+  background-color: transparent;
+  outline: 0;
+  border: 0;
+}
+
+button:focus {
+  outline: 1px solid $color-accent;
 }

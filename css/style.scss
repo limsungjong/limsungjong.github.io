@@ -1,13 +1,13 @@
-/* global */
+/*            Global            */
 
-/* Colors */
+/*            Colors            */
 $color-white: #ffffff;
 $color-black: #050a13;
 $color-blue: #03e8f9;
 $color-orange: #fd6413;
 $color-gray: #1b1e26;
 
-/* App Colors */
+/*            App Colors            */
 $color-primary: $color-black;
 $color-primary-variant: $color-gray;
 $color-accent: $color-blue;
@@ -52,7 +52,7 @@ button:focus {
   outline: 1px solid $color-accent;
 }
 
-// header
+/*            Header            */
 .header {
   background-color: transparent;
   position: fixed;
@@ -62,11 +62,7 @@ button:focus {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-// header
-.header {
-  // logo
+  /*            Logo            */
   .logo {
     display: flex;
     align-items: center;
@@ -82,7 +78,7 @@ button:focus {
     }
   }
 
-  // nav
+  /*            Nav            */
   .menu {
     display: flex;
     gap: 4px;
@@ -102,3 +98,49 @@ button:focus {
   }
 }
 
+/*            Main            */
+
+/*            Home            */
+#home {
+  background-color: $color-primary;
+  color: $color-text;
+  padding: 7rem 1rem 5rem;
+  text-align: center;
+
+  .profile-image {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border: 3px solid $color-accent;
+    border-radius: 50%;
+  }
+
+  .title {
+    font-size: 3rem;
+    margin: 1rem;
+
+    .strong {
+      color: $color-accent;
+    }
+  }
+
+  .description {
+    font-size: 1.3rem;
+  }
+
+  .contact-button {
+    display: inline-block;
+    background-color: $color-accent;
+    margin: 2rem;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    color: $color-black;
+    border-radius: 4px;
+  }
+
+  .contact-button:hover {
+    background-color: transparent;
+    color: $color-text;
+    outline: 2px solid $color-accent-variant;
+  }
+}

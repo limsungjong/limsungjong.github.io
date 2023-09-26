@@ -36,21 +36,25 @@
   </head>
   <body>
     <!--  header  -->
-    <header>
+    <header class="header">
       <!--   header logo   -->
-      <div class="logoBox">
-        <img src="./images/circle_profile_img.png" alt="profile_image" />
-        <h1><a href="#">Van</a></h1>
+      <div class="logo">
+        <img
+          class="image"
+          src="./images/circle_profile_img.png"
+          alt="profile_image"
+        />
+        <h1 class="title"><a href="#">Van</a></h1>
       </div>
       <!--   header nav   -->
       <nav>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Project</a></li>
-          <li><a href="#experience">Career</a></li>
-          <li><a href="#contact">Contact</a></li>
+        <ul class="menu">
+          <li><a class="item active" href="#home">Home</a></li>
+          <li><a class="item" href="#about">About</a></li>
+          <li><a class="item" href="#skills">Skills</a></li>
+          <li><a class="item" href="#projects">Project</a></li>
+          <li><a class="item" href="#experience">Career</a></li>
+          <li><a class="item" href="#contact">Contact</a></li>
         </ul>
       </nav>
     </header>
@@ -59,16 +63,19 @@
       <!--   main home   -->
       <section id="home" class="home">
         <img
-          class="profileImg"
-          src="./images/profile-removebg-preview.png"
-          alt="van_profile_img"
+          class="profile-image"
+          src="./images/KakaoTalk_20230516_221725239.jpg"
+          alt="profile_img"
         />
-        <h2>안녕하세요! 웹 개발자 임성종입니다.</h2>
-        <p>
+        <h2 class="title">
+          안녕하세요!<br />
+          <strong class="strong">웹 개발자</strong> 임성종입니다.
+        </h2>
+        <p class="description">
           인천에서 거주중이며, 주니어 개발자로서 다양한 경험을 통하여 성장하고
           있습니다.
         </p>
-        <a href="#contact">Contact Me</a>
+        <a class="contact-button" href="#contact">Contact Me</a>
       </section>
       <!--   main about   -->
       <section id="about" class="about">

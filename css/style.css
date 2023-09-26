@@ -1,6 +1,6 @@
-/* global */
-/* Colors */
-/* App Colors */
+/*            Global            */
+/*            Colors            */
+/*            App Colors            */
 body {
   background-color: #ffffff;
   font-family: "Noto Sans KR", sans-serif;
@@ -39,6 +39,7 @@ button:focus {
   outline: 1px solid #03e8f9;
 }
 
+/*            Header            */
 .header {
   background-color: transparent;
   position: fixed;
@@ -48,8 +49,9 @@ button:focus {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  /*            Logo            */
+  /*            Nav            */
 }
-
 .header .logo {
   display: flex;
   align-items: center;
@@ -75,6 +77,46 @@ button:focus {
 .header .menu .item.active {
   border: 1px solid #03e8f9;
   border-radius: 4px;
+}
+
+/*            Main            */
+/*            Home            */
+#home {
+  background-color: #050a13;
+  color: #ffffff;
+  padding: 7rem 1rem 5rem;
+  text-align: center;
+}
+#home .profile-image {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border: 3px solid #03e8f9;
+  border-radius: 50%;
+}
+#home .title {
+  font-size: 3rem;
+  margin: 1rem;
+}
+#home .title .strong {
+  color: #03e8f9;
+}
+#home .description {
+  font-size: 1.3rem;
+}
+#home .contact-button {
+  display: inline-block;
+  background-color: #03e8f9;
+  margin: 2rem;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  color: #050a13;
+  border-radius: 4px;
+}
+#home .contact-button:hover {
+  background-color: transparent;
+  color: #ffffff;
+  outline: 2px solid #fd6413;
 }
 
 /*# sourceMappingURL=style.css.map */

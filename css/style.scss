@@ -16,6 +16,7 @@ $color-text: $color-white;
 
 /*            App Size            */
 $size-max-width: 1200px;
+$size-inner-max-width: 800px;
 
 body {
   background-color: $color-white;
@@ -72,8 +73,22 @@ button:focus {
   margin: 0.5rem 0;
 }
 
+.accent {
+  font-size: 1.5rem;
+  color: $color-accent;
+}
+
+.accent:hover {
+  color: $color-accent-variant;
+}
+
 .max-container {
   max-width: $size-max-width;
+  margin: 0 auto;
+}
+
+.inner-max-container {
+  max-width: $size-inner-max-width;
   margin: 0 auto;
 }
 
@@ -232,9 +247,73 @@ button:focus {
   }
 }
 
+#journeys {
+  background-color: $color-primary-variant;
+  color: $color-text;
+  display: flex;
+  flex-direction: column;
+
+  .journey {
+    margin: 2rem;
+    background-color: $color-primary;
+    border-radius: 8px;
+    padding: 2rem 5rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10rem;
+    box-shadow:
+      rgba(6, 24, 44, 0.4) 0 0 0 2px,
+      rgba(6, 24, 44, 0.65) 0 4px 6px -1px,
+      rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+
+    .left {
+      min-width: 300px;
+      max-width: 500px;
+
+      .period {
+        font-size: 1.2rem;
+      }
+
+      .name {
+        margin: 1rem 0;
+        font-size: 2rem;
+      }
+    }
+
+    .right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 400px;
+      font-size: 1.2rem;
+
+      .content {
+        display: inline-block;
+      }
+
+      .content:before {
+        content: " * ";
+        vertical-align: sub;
+        color: $color-accent-variant;
+      }
+    }
+
+    .icon {
+      font-size: 3rem;
+      color: $color-accent;
+      transition: 250ms;
+    }
+
+    &:hover .icon {
+      transform: scale(1.2) rotate(-15deg);
+    }
+  }
+}
+
 /*            Skills            */
 #skills {
-  background-color: $color-primary-variant;
+  background-color: $color-primary;
   color: $color-text;
 
   .skills {
@@ -260,7 +339,7 @@ button:focus {
     .mostSkills {
       grid-row: span 2;
       padding: 1rem;
-      background-color: $color-primary;
+      background-color: $color-primary-variant;
 
       .bar {
         display: flex;
@@ -276,7 +355,7 @@ button:focus {
         .bg {
           width: 100%;
           height: 3px;
-          background-color: $color-primary-variant;
+          background-color: $color-primary;
         }
 
         .value {
@@ -288,21 +367,20 @@ button:focus {
 
     .otherSkills {
       padding: 1rem;
+      background-color: $color-primary-variant;
+      filter: brightness(130%);
     }
 
     .tools {
       padding: 1rem;
       background-color: $color-primary;
-      filter: brightness(150%);
+      filter: brightness(130%);
     }
   }
 }
 
 /*           Projects           */
 #projects {
-  background-color: $color-primary;
-  color: $color-text;
-
   .buttons {
     display: flex;
     justify-content: center;

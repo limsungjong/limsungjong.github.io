@@ -96,7 +96,7 @@ button:focus {
 
 /*            Header            */
 .header {
-  background-color: transparent;
+  background-color: $color-primary;
   position: fixed;
   top: 0;
   width: 100%;
@@ -122,21 +122,23 @@ button:focus {
   }
 
   /*            Nav            */
-  .menu {
-    display: flex;
-    gap: 4px;
+  .nav {
+    .menu {
+      display: flex;
+      gap: 4px;
 
-    .item {
-      padding: 8px 16px;
-    }
+      .item {
+        padding: 8px 16px;
+      }
 
-    .item:hover {
-      border-bottom: 1px solid $color-accent;
-    }
+      .item:hover {
+        border-bottom: 1px solid $color-accent;
+      }
 
-    .item.active {
-      border: 1px solid $color-accent;
-      border-radius: 4px;
+      .item.active {
+        border: 1px solid $color-accent;
+        border-radius: 4px;
+      }
     }
   }
 }
@@ -408,7 +410,7 @@ button:focus {
 
   .projects {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
     gap: 1rem;
 
@@ -484,7 +486,7 @@ button:focus {
   font-size: 3rem;
   width: 4.5rem;
   height: 4.5rem;
-  box-shadow: 3px 3px 0px 0px $color-accent;
+  box-shadow: 3px 3px 0 0 $color-accent;
 }
 
 /*            Footer            */
@@ -506,4 +508,143 @@ button:focus {
       color: $color-accent;
     }
   }
+}
+
+/*            Footer            */
+@media screen and (max-width: 768px) {
+  /*            Common            */
+  .section {
+    padding: 2rem;
+  }
+  .title {
+    font-size: 2rem;
+  }
+  .description {
+    font-size: 1rem;
+  }
+  /*            Header            */
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+
+    .nav {
+      width: 100%;
+
+      .menu {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 4rem;
+        gap: 1rem;
+      }
+    }
+  }
+
+  /*            Home            */
+  #home {
+    padding-bottom: 2.5rem;
+
+    .title {
+      font-size: 2rem;
+      padding-bottom: 0.5rem;
+    }
+
+    .description {
+      font-size: 1rem;
+    }
+  }
+
+  /*            About            */
+  #about {
+    .majors {
+      flex-direction: column;
+    }
+
+    .period {
+      font-size: 1.1rem;
+    }
+
+    .major {
+      max-width: 25rem;
+
+      padding: 1.2rem;
+    }
+  }
+
+  /*            Journeys            */
+  #journeys {
+    .journey {
+      max-width: 25rem;
+      margin: 1rem 0;
+      padding: 1rem;
+      gap: 0.5rem;
+      flex-direction: column;
+      align-items: center;
+
+      .left {
+        .name {
+          font-size: 1.5rem;
+          margin: 0.5rem;
+        }
+
+        .description {
+        }
+      }
+
+      .right {
+        font-size: 0.8rem;
+        min-width: 200px;
+        width: auto;
+
+        .icon {
+          transition: none;
+        }
+      }
+    }
+  }
+
+  /*            Skills            */
+  #skills {
+    .skills {
+      grid-template-columns: 1fr;
+      margin: 1rem 0;
+
+      .title {
+        margin-top: 0;
+      }
+
+      .mostSkills {
+        .bar {
+          padding: 0.5rem;
+        }
+      }
+    }
+  }
+
+  /*            Projects            */
+  #projects {
+    .projects {
+      grid-template-columns: repeat(2, 1fr);
+
+      .project {
+        .metadata {
+          .title {
+            font-size: 0.8rem;
+          }
+
+          .description {
+            font-size: 0.6rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*           Arrow Up           */
+.arrowUp {
+  font-size: 2rem;
+  width: 3rem;
+  height: 3rem;
+  bottom: 1.5rem;
+  right: 1.5rem;
 }

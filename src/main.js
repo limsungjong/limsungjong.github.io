@@ -48,3 +48,21 @@ document.addEventListener("scroll", () => {
     headerElement.classList.add("hide");
   }
 });
+
+// home 스크롤 이벤트(페이지 아래로 내리면 홈 섹션 투명도 조절)
+const homeElement = document.querySelector("#home .container");
+const homeElementRect = homeElement.getBoundingClientRect();
+document.addEventListener("scroll", () => {
+  homeElement.style.opacity = calOpacity(
+    window.scrollY,
+    homeElementRect.top,
+    homeElementRect.height,
+  ).toFixed(2);
+});
+
+function calOpacity(scrollY, minScroll, maxScroll) {
+  const scrollRatio = 1 - (scrollY - minScroll) / (maxScroll - minScroll);
+  const minOpacity = 0;
+  const maxOpacity = 1;
+  return minOpacity + scrollRatio * (maxOpacity - minOpacity);
+}

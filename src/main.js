@@ -39,8 +39,7 @@ function fillGauge(element, targetPercent, duration) {
 
 // header 스크롤 이벤트 (페이지 아래로 스크롤링 하면 헤더에 hide 클래스 적용)
 const headerElement = document.querySelector(".header");
-const headerElementRect = headerElement.getBoundingClientRect();
-const headerElementHeight = headerElementRect.height;
+const headerElementHeight = headerElement.offsetHeight;
 document.addEventListener("scroll", () => {
   if (window.scrollY > headerElementHeight) {
     headerElement.classList.remove("hide");
@@ -51,12 +50,13 @@ document.addEventListener("scroll", () => {
 
 // home 스크롤 이벤트(페이지 아래로 내리면 홈 섹션 투명도 조절)
 const homeElement = document.querySelector("#home .container");
-const homeElementRect = homeElement.getBoundingClientRect();
+const homeElementTop = homeElement.clientTop;
+const homeElementHeight = homeElement.offsetHeight;
 document.addEventListener("scroll", () => {
   homeElement.style.opacity = calOpacity(
     window.scrollY,
-    homeElementRect.top,
-    homeElementRect.height,
+    homeElementTop,
+    homeElementHeight,
   ).toFixed(2);
 });
 
@@ -66,3 +66,16 @@ function calOpacity(scrollY, minScroll, maxScroll) {
   const maxOpacity = 1;
   return minOpacity + scrollRatio * (maxOpacity - minOpacity);
 }
+
+// arrow up 스크롤 이벤트(아래로 스크롤 내리면 애로우 업 버튼 토글)
+const arrowUpBtn = document.querySelector(".arrowUp");
+arrowUpBtn.addEventListener("click", () => {
+  window.scroll({ top: 0, left: 0, behavior: "smooth" });
+});
+document.addEventListener("scroll", () => {
+  if (window.scrollY < homeElementHeight) {
+    arrowUpBtn.classList.add("hide");
+  } else {
+    arrowUpBtn.classList.remove("hide");
+  }
+});

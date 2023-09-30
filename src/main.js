@@ -1,6 +1,6 @@
+// 스킬 섹션 게이지 채워지는 이벤트
 const skillsElement = document.querySelector("#skills");
-
-const obs = new IntersectionObserver(
+const skillSectionObs = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
@@ -14,8 +14,7 @@ const obs = new IntersectionObserver(
   },
   { threshold: 0.8 },
 );
-
-obs.observe(skillsElement);
+skillSectionObs.observe(skillsElement);
 
 function fillGauge(element, targetPercent, duration) {
   let startPercent = parseFloat(element.style.width) || 0;
@@ -37,3 +36,15 @@ function fillGauge(element, targetPercent, duration) {
 
   requestAnimationFrame(animate);
 }
+
+// header 스크롤 이벤트 (페이지 아래로 스크롤링 하면 헤더에 hide 클래스 적용)
+const headerElement = document.querySelector(".header");
+const headerElementRect = headerElement.getBoundingClientRect();
+const headerElementHeight = headerElementRect.height;
+document.addEventListener("scroll", () => {
+  if (window.scrollY > headerElementHeight) {
+    headerElement.classList.remove("hide");
+  } else {
+    headerElement.classList.add("hide");
+  }
+});

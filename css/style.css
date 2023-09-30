@@ -78,7 +78,7 @@ button:focus {
 
 /*            Header            */
 .header {
-  background-color: #050a13;
+  background-color: #001524;
   position: fixed;
   top: 0;
   width: 100%;
@@ -87,6 +87,8 @@ button:focus {
   justify-content: space-between;
   align-items: center;
   z-index: 95;
+  transition: all 250ms ease-in;
+  outline: 1px solid #fd6413;
   /*            Logo            */
   /*            Nav            */
 }
@@ -115,6 +117,11 @@ button:focus {
 .header .nav .menu .item.active {
   border: 1px solid #03e8f9;
   border-radius: 4px;
+}
+
+.header.hide {
+  background-color: transparent;
+  outline: none;
 }
 
 /*            Main            */

@@ -1,15 +1,24 @@
-const menuToggleElement = document.querySelector("#toggle");
+const menuToggleElement = document.querySelector("#toggle") as HTMLInputElement;
 // 스킬 섹션 게이지 채워지는 이벤트
-const skillsElement = document.querySelector("#skills");
+const skillsElement = document.querySelector("#skills") as HTMLDivElement;
 const skillSectionObs = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        fillGauge(document.querySelector(".java"), 80, 1000);
-        fillGauge(document.querySelector(".spring"), 75, 1000);
-        fillGauge(document.querySelector(".mySQL"), 70, 1000);
-        fillGauge(document.querySelector(".javaScript"), 80, 1000);
-        fillGauge(document.querySelector(".react"), 60, 1000);
+        fillGauge(document.querySelector(".java") as HTMLDivElement, 80, 1000);
+
+        fillGauge(
+          document.querySelector(".spring") as HTMLDivElement,
+          75,
+          1000,
+        );
+        fillGauge(document.querySelector(".mySQL") as HTMLDivElement, 70, 1000);
+        fillGauge(
+          document.querySelector(".javaScript") as HTMLDivElement,
+          80,
+          1000,
+        );
+        fillGauge(document.querySelector(".react") as HTMLDivElement, 60, 1000);
       }
     });
   },
@@ -17,11 +26,15 @@ const skillSectionObs = new IntersectionObserver(
 );
 skillSectionObs.observe(skillsElement);
 
-function fillGauge(element, targetPercent, duration) {
+function fillGauge(
+  element: HTMLElement,
+  targetPercent: number,
+  duration: number,
+) {
   let startPercent = parseFloat(element.style.width) || 0;
-  let startTime = null;
+  let startTime: number = 0;
 
-  function animate(currentTime) {
+  function animate(currentTime: number) {
     if (!startTime) startTime = currentTime;
     let elapsedTime = currentTime - startTime;
     let percentComplete = Math.min(1, elapsedTime / duration);
@@ -39,7 +52,7 @@ function fillGauge(element, targetPercent, duration) {
 }
 
 // header 스크롤 이벤트 (페이지 아래로 스크롤링 하면 헤더에 hide 클래스 적용)
-const headerElement = document.querySelector(".header");
+const headerElement = document.querySelector(".header") as HTMLDivElement;
 const headerElementHeight = headerElement.offsetHeight;
 document.addEventListener("scroll", () => {
   if (menuToggleElement.checked) {
@@ -52,7 +65,9 @@ document.addEventListener("scroll", () => {
 });
 
 // home 스크롤 이벤트(페이지 아래로 내리면 홈 섹션 투명도 조절)
-const homeElement = document.querySelector("#home .container");
+const homeElement = document.querySelector(
+  "#home .container",
+) as HTMLDivElement;
 const homeElementTop = homeElement.clientTop;
 const homeElementHeight = homeElement.offsetHeight;
 document.addEventListener("scroll", () => {
@@ -63,7 +78,7 @@ document.addEventListener("scroll", () => {
   ).toFixed(2);
 });
 
-function calOpacity(scrollY, minScroll, maxScroll) {
+function calOpacity(scrollY: number, minScroll: number, maxScroll: number) {
   const scrollRatio = 1 - (scrollY - minScroll) / (maxScroll - minScroll);
   const minOpacity = 0;
   const maxOpacity = 1;
@@ -71,7 +86,7 @@ function calOpacity(scrollY, minScroll, maxScroll) {
 }
 
 // arrow up 스크롤 이벤트(아래로 스크롤 내리면 애로우 업 버튼 토글)
-const arrowUpBtn = document.querySelector(".arrowUp");
+const arrowUpBtn = document.querySelector(".arrowUp") as HTMLDivElement;
 arrowUpBtn.addEventListener("click", () => {
   window.scroll({ top: 0, left: 0, behavior: "smooth" });
 });

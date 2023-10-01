@@ -485,7 +485,7 @@ button:focus {
 @media screen and (max-width: 768px) {
   /*            Common            */
   .section {
-    padding: 2rem;
+    padding: 4rem 2rem;
   }
   .title {
     font-size: 2rem;
@@ -498,6 +498,10 @@ button:focus {
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
+    padding: 0.5rem 1rem;
+  }
+  .header .logo .title {
+    margin: 0.5rem 0;
   }
   .header .button-container {
     display: flex;
@@ -509,6 +513,7 @@ button:focus {
   .header .nav {
     position: relative;
     width: 100%;
+    transition: all 350ms ease-in;
   }
   .header .nav .menu {
     display: none;

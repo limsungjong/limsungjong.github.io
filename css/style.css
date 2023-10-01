@@ -90,6 +90,7 @@ button:focus {
   transition: all 250ms ease-in;
   outline: 1px solid #fd6413;
   /*            Logo            */
+  /*            Toggle btn            */
   /*            Nav            */
 }
 .header .logo {
@@ -104,6 +105,52 @@ button:focus {
 .header .logo .title {
   font-size: 1.8rem;
 }
+.header #toggle {
+  display: none;
+}
+.header .button-container {
+  display: none;
+  height: 100%;
+  width: 30px;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.header .button-container .button::before,
+.header .button-container .button::after {
+  pointer-events: auto;
+}
+.header .button,
+.header .button::before,
+.header .button::after {
+  display: block;
+  background-color: #fff;
+  position: absolute;
+  height: 4px;
+  width: 30px;
+  transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  border-radius: 2px;
+}
+.header .button::before {
+  content: "";
+  margin-top: -8px;
+}
+.header .button::after {
+  content: "";
+  margin-top: 8px;
+}
+.header #toggle:checked + .button-container .button::before {
+  margin-top: 0px;
+  transform: rotate(405deg);
+}
+.header #toggle:checked + .button-container .button {
+  background: rgba(255, 255, 255, 0);
+}
+.header #toggle:checked + .button-container .button::after {
+  margin-top: 0px;
+  transform: rotate(-405deg);
+}
 .header .nav .menu {
   display: flex;
   gap: 4px;
@@ -117,6 +164,9 @@ button:focus {
 .header .nav .menu .item.active {
   border: 1px solid #03e8f9;
   border-radius: 4px;
+}
+.header .nav .menu.hide {
+  display: none;
 }
 
 .header.hide {
@@ -170,6 +220,7 @@ button:focus {
   justify-content: space-between;
   gap: 1rem;
   margin: 2.5rem 0;
+  align-items: center;
 }
 #about .majors .major {
   flex: 1;
@@ -178,6 +229,7 @@ button:focus {
   color: #ffffff;
   border-radius: 1rem;
   user-select: none;
+  width: 100%;
   box-shadow: 4px 8px 8px rgba(0, 0, 0, 0.38);
 }
 #about .majors .major .icon {
@@ -429,7 +481,7 @@ button:focus {
   color: #03e8f9;
 }
 
-/*            Footer            */
+/*            Media Query            */
 @media screen and (max-width: 768px) {
   /*            Common            */
   .section {
@@ -445,15 +497,31 @@ button:focus {
   .header {
     flex-direction: column;
     align-items: flex-start;
+    justify-content: center;
+  }
+  .header .button-container {
+    display: flex;
+    position: absolute;
+    right: 5%;
+    height: 50%;
+    width: 40px;
   }
   .header .nav {
+    position: relative;
     width: 100%;
   }
   .header .nav .menu {
+    display: none;
     flex-direction: column;
     align-items: center;
     padding: 1rem 4rem;
     gap: 1rem;
+  }
+  .header #toggle:checked ~ #nav .menu {
+    display: flex;
+  }
+  .header #toggle:checked ~ .button-container {
+    top: -10%;
   }
   /*            Home            */
   #home {

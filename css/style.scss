@@ -20,6 +20,8 @@ $color-text: $color-white;
 $size-max-width: 1200px;
 $size-inner-max-width: 800px;
 
+$toggle-checked: false;
+
 body {
   background-color: $color-white;
   font-family: "Noto Sans KR", sans-serif;
@@ -124,6 +126,63 @@ button:focus {
     }
   }
 
+  /*            Toggle btn            */
+
+  #toggle {
+    display: none;
+  }
+
+  .button-container {
+    display: none;
+    height: 100%;
+    width: 30px;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .button::before,
+    .button::after {
+      pointer-events: auto;
+    }
+  }
+
+  .button,
+  .button::before,
+  .button::after {
+    display: block;
+    background-color: #fff;
+    position: absolute;
+    height: 4px;
+    width: 30px;
+    transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    border-radius: 2px;
+  }
+
+  .button::before {
+    content: "";
+    margin-top: -8px;
+  }
+
+  .button::after {
+    content: "";
+    margin-top: 8px;
+  }
+
+  #toggle:checked + .button-container .button::before {
+    margin-top: 0px;
+    transform: rotate(405deg);
+  }
+
+  #toggle:checked + .button-container .button {
+    background: rgba(255, 255, 255, 0);
+  }
+
+  #toggle:checked + .button-container .button::after {
+    margin-top: 0px;
+    transform: rotate(-405deg);
+  }
+
   /*            Nav            */
   .nav {
     .menu {
@@ -142,6 +201,10 @@ button:focus {
         border: 1px solid $color-accent;
         border-radius: 4px;
       }
+    }
+
+    .menu.hide {
+      display: none;
     }
   }
 }
@@ -205,6 +268,7 @@ button:focus {
     justify-content: space-between;
     gap: 1rem;
     margin: 2.5rem 0;
+    align-items: center;
 
     .major {
       flex: 1;
@@ -213,6 +277,7 @@ button:focus {
       color: $color-text;
       border-radius: 1rem;
       user-select: none;
+      width: 100%;
       box-shadow: 4px 8px 8px rgba(0, 0, 0, 0.38);
 
       .icon {
@@ -518,7 +583,7 @@ button:focus {
   }
 }
 
-/*            Footer            */
+/*            Media Query            */
 @media screen and (max-width: 768px) {
   /*            Common            */
   .section {
@@ -534,16 +599,36 @@ button:focus {
   .header {
     flex-direction: column;
     align-items: flex-start;
+    justify-content: center;
+
+    .button-container {
+      display: flex;
+      position: absolute;
+      right: 5%;
+      height: 50%;
+      width: 40px;
+    }
 
     .nav {
+      position: relative;
       width: 100%;
+      //transition: all 200ms ease-in;
 
       .menu {
+        display: none;
         flex-direction: column;
         align-items: center;
         padding: 1rem 4rem;
         gap: 1rem;
       }
+    }
+
+    #toggle:checked ~ #nav .menu {
+      display: flex;
+    }
+
+    #toggle:checked ~ .button-container {
+      top: -10%;
     }
   }
 

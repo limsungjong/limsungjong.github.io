@@ -1,3 +1,4 @@
+const menuToggleElement = document.querySelector("#toggle");
 // 스킬 섹션 게이지 채워지는 이벤트
 const skillsElement = document.querySelector("#skills");
 const skillSectionObs = new IntersectionObserver(
@@ -41,9 +42,11 @@ function fillGauge(element, targetPercent, duration) {
 const headerElement = document.querySelector(".header");
 const headerElementHeight = headerElement.offsetHeight;
 document.addEventListener("scroll", () => {
-  if (window.scrollY > headerElementHeight) {
+  if (menuToggleElement.checked) {
     headerElement.classList.remove("hide");
-  } else {
+  } else if (window.scrollY > homeElementHeight) {
+    headerElement.classList.remove("hide");
+  } else if (window.scrollY < homeElementHeight) {
     headerElement.classList.add("hide");
   }
 });
@@ -77,5 +80,18 @@ document.addEventListener("scroll", () => {
     arrowUpBtn.classList.add("hide");
   } else {
     arrowUpBtn.classList.remove("hide");
+  }
+});
+
+// size 이벤트
+const menuElement = headerElement.querySelector(".menu");
+
+// toggle 이벤트
+menuToggleElement.addEventListener("click", (e) => {
+  if (menuToggleElement.checked) {
+    headerElement.classList.remove("hide");
+  }
+  if (!menuToggleElement.checked && scrollY < homeElementHeight) {
+    headerElement.classList.add("hide");
   }
 });

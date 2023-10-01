@@ -49,7 +49,7 @@ button:focus {
 
 .title {
   font-size: 2.5rem;
-  margin: 1rem 0;
+  margin: 0.2rem 0;
 }
 
 .description {
@@ -157,6 +157,9 @@ button:focus {
 }
 .header .nav .menu .item {
   padding: 8px 16px;
+  display: block;
+  text-align: center;
+  border: 1px solid transparent;
 }
 .header .nav .menu .item:hover {
   border-bottom: 1px solid #03e8f9;
@@ -518,15 +521,14 @@ button:focus {
   .header .nav .menu {
     display: none;
     flex-direction: column;
-    align-items: center;
-    padding: 1rem 4rem;
+    padding: 1rem 0;
     gap: 1rem;
   }
   .header #toggle:checked ~ #nav .menu {
     display: flex;
   }
   .header #toggle:checked ~ .button-container {
-    top: -10%;
+    top: -15%;
   }
   /*            Home            */
   #home {

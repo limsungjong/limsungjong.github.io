@@ -107,7 +107,7 @@ menuToggleElement.addEventListener("click", () => {
 
 // nav바 토글 버튼 체크 해제
 const navElement = document.querySelector(".nav") as HTMLDivElement;
-navElement.addEventListener("click", (evt) => {
+navElement.addEventListener("click", () => {
   menuToggleElement.checked = false;
 });
 

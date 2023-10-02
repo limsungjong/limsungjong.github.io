@@ -78,7 +78,7 @@ menuToggleElement.addEventListener("click", () => {
 });
 // nav바 토글 버튼 체크 해제
 const navElement = document.querySelector(".nav");
-navElement.addEventListener("click", (evt) => {
+navElement.addEventListener("click", () => {
     menuToggleElement.checked = false;
 });
 // toggle 버튼 눌렀을때 home이 눌렀을때 hide 제거

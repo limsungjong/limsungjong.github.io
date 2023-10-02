@@ -96,7 +96,7 @@ document.addEventListener("scroll", () => {
 });
 
 // toggle 버튼 이벤트
-menuToggleElement.addEventListener("click", (e) => {
+menuToggleElement.addEventListener("click", () => {
   if (menuToggleElement.checked) {
     headerElement.classList.remove("hide");
   }
@@ -108,7 +108,6 @@ menuToggleElement.addEventListener("click", (e) => {
 // nav바 토글 버튼 체크 해제
 const navElement = document.querySelector(".nav") as HTMLDivElement;
 navElement.addEventListener("click", (evt) => {
-  const target = evt.target as HTMLDivElement;
   menuToggleElement.checked = false;
 });
 

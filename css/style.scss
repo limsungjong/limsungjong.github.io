@@ -170,7 +170,7 @@ button:focus {
   }
 
   #toggle:checked + .button-container .button::before {
-    margin-top: 0px;
+    margin-top: 0;
     transform: rotate(405deg);
   }
 
@@ -179,7 +179,7 @@ button:focus {
   }
 
   #toggle:checked + .button-container .button::after {
-    margin-top: 0px;
+    margin-top: 0;
     transform: rotate(-405deg);
   }
 

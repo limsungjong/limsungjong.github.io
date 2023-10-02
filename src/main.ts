@@ -119,5 +119,3 @@ navHomeElement?.addEventListener("click", () => {
     headerElement.classList.add("hide");
   }
 });
-
-document.addEventListener("scroll", (e) => {});

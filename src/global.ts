@@ -1,4 +1,4 @@
-type ElementsRect = {
+type AllElementsRect = {
   header: DOMRect;
   home: DOMRect;
   about: DOMRect;
@@ -8,7 +8,7 @@ type ElementsRect = {
   contact: DOMRect;
 };
 
-const AllElementsRect: ElementsRect = {
+const AllElementsRect: Readonly<AllElementsRect> = {
   header: (
     document.querySelector(".header") as HTMLDivElement
   ).getBoundingClientRect(),

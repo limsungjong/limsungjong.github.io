@@ -89,4 +89,3 @@ navHomeElement === null || navHomeElement === void 0 ? void 0 : navHomeElement.a
         headerElement.classList.add("hide");
     }
 });
-document.addEventListener("scroll", (e) => { });

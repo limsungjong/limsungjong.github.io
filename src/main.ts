@@ -67,13 +67,11 @@ document.addEventListener("scroll", () => {
 const homeElement = document.querySelector(
   "#home .container",
 ) as HTMLDivElement;
-const homeElementTop = homeElement.clientTop;
-const homeElementHeight = homeElement.offsetHeight;
 document.addEventListener("scroll", () => {
   homeElement.style.opacity = calOpacity(
     window.scrollY,
-    homeElementTop,
-    homeElementHeight,
+    AllElementsRect.home.top,
+    AllElementsRect.home.height,
   ).toFixed(2);
 });
 
@@ -90,7 +88,7 @@ arrowUpBtn.addEventListener("click", () => {
   window.scroll({ top: 0, left: 0, behavior: "smooth" });
 });
 document.addEventListener("scroll", () => {
-  if (window.scrollY < homeElementHeight) {
+  if (window.scrollY < AllElementsRect.home.height) {
     arrowUpBtn.classList.add("hide");
   } else {
     arrowUpBtn.classList.remove("hide");
@@ -102,7 +100,7 @@ menuToggleElement.addEventListener("click", (e) => {
   if (menuToggleElement.checked) {
     headerElement.classList.remove("hide");
   }
-  if (!menuToggleElement.checked && scrollY < homeElementHeight) {
+  if (!menuToggleElement.checked && scrollY < AllElementsRect.home.height) {
     headerElement.classList.add("hide");
   }
 });
@@ -110,14 +108,15 @@ menuToggleElement.addEventListener("click", (e) => {
 // nav바 토글 버튼 체크 해제
 const navElement = document.querySelector(".nav") as HTMLDivElement;
 navElement.addEventListener("click", (evt) => {
+  const target = evt.target as HTMLDivElement;
   menuToggleElement.checked = false;
 });
 
 // toggle 버튼 눌렀을때 home이 눌렀을때 hide 제거
 const navHomeElement = document.querySelector("a[data-text='home']");
 navHomeElement?.addEventListener("click", () => {
-  if (headerElement.classList.contains("hide")) {
-    headerElement.classList.remove("hide");
+  if (!headerElement.classList.contains("hide")) {
+    headerElement.classList.add("hide");
   }
 });
 

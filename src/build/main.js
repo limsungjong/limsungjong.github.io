@@ -45,10 +45,8 @@ document.addEventListener("scroll", () => {
 });
 // home 스크롤 이벤트(페이지 아래로 내리면 홈 섹션 투명도 조절)
 const homeElement = document.querySelector("#home .container");
-const homeElementTop = homeElement.clientTop;
-const homeElementHeight = homeElement.offsetHeight;
 document.addEventListener("scroll", () => {
-    homeElement.style.opacity = calOpacity(window.scrollY, homeElementTop, homeElementHeight).toFixed(2);
+    homeElement.style.opacity = calOpacity(window.scrollY, AllElementsRect.home.top, AllElementsRect.home.height).toFixed(2);
 });
 function calOpacity(scrollY, minScroll, maxScroll) {
     const scrollRatio = 1 - (scrollY - minScroll) / (maxScroll - minScroll);
@@ -62,7 +60,7 @@ arrowUpBtn.addEventListener("click", () => {
     window.scroll({ top: 0, left: 0, behavior: "smooth" });
 });
 document.addEventListener("scroll", () => {
-    if (window.scrollY < homeElementHeight) {
+    if (window.scrollY < AllElementsRect.home.height) {
         arrowUpBtn.classList.add("hide");
     }
     else {
@@ -74,20 +72,21 @@ menuToggleElement.addEventListener("click", (e) => {
     if (menuToggleElement.checked) {
         headerElement.classList.remove("hide");
     }
-    if (!menuToggleElement.checked && scrollY < homeElementHeight) {
+    if (!menuToggleElement.checked && scrollY < AllElementsRect.home.height) {
         headerElement.classList.add("hide");
     }
 });
 // nav바 토글 버튼 체크 해제
 const navElement = document.querySelector(".nav");
 navElement.addEventListener("click", (evt) => {
+    const target = evt.target;
     menuToggleElement.checked = false;
 });
 // toggle 버튼 눌렀을때 home이 눌렀을때 hide 제거
 const navHomeElement = document.querySelector("a[data-text='home']");
 navHomeElement === null || navHomeElement === void 0 ? void 0 : navHomeElement.addEventListener("click", () => {
-    if (headerElement.classList.contains("hide")) {
-        headerElement.classList.remove("hide");
+    if (!headerElement.classList.contains("hide")) {
+        headerElement.classList.add("hide");
     }
 });
 document.addEventListener("scroll", (e) => { });

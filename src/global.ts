@@ -1,14 +1,18 @@
-type AllElementsRect = {
-  header: DOMRect;
-  home: DOMRect;
-  about: DOMRect;
-  journeys: DOMRect;
-  skills: DOMRect;
-  projects: DOMRect;
-  contact: DOMRect;
+type AllSections<T> = {
+  header: T;
+  home: T;
+  about: T;
+  journeys: T;
+  skills: T;
+  projects: T;
+  contact: T;
 };
 
-const AllElementsRect: Readonly<AllElementsRect> = {
+type AllSectionsThreshold = {
+  [key: string]: IntersectionObserverInit;
+};
+
+const AllSectionsRect: Readonly<AllSections<DOMRect>> = {
   header: (
     document.querySelector(".header") as HTMLDivElement
   ).getBoundingClientRect(),
@@ -30,4 +34,13 @@ const AllElementsRect: Readonly<AllElementsRect> = {
   contact: (
     document.querySelector("#contact") as HTMLDivElement
   ).getBoundingClientRect(),
+};
+
+const AllSectionsThreshold: AllSectionsThreshold = {
+  home: { threshold: 0.7 },
+  about: { threshold: 0.5 },
+  journeys: { threshold: 0.3 },
+  skills: { threshold: 0.5 },
+  projects: { threshold: 0.9 },
+  contact: { threshold: 0.8 },
 };

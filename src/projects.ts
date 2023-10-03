@@ -4,7 +4,7 @@ const handleProjectSelection = (element: HTMLElement) => {
   element.classList.add("selected");
 };
 
-const handleProjectFiltering = (element: HTMLElement) => {
+const filterProject = (element: HTMLElement) => {
   const projects: NodeListOf<HTMLDivElement> =
     document.querySelectorAll(".project");
   const projectsContainer = document.querySelector(".projects");
@@ -19,6 +19,9 @@ const handleProjectFiltering = (element: HTMLElement) => {
     } else {
       e.style.display = "none";
     }
+    if (e.dataset.type === "empty") {
+      e.style.display = "block";
+    }
   });
   setTimeout(() => {
     projectsContainer?.classList.remove("animation-out");
@@ -28,10 +31,10 @@ const handleProjectFiltering = (element: HTMLElement) => {
 const projectButtons = document.querySelector(".buttons");
 projectButtons?.addEventListener("click", (evt) => {
   const element = evt.target as HTMLButtonElement | null;
-  if (element == undefined) {
+  if (element == undefined || element.classList.contains("buttons")) {
     return;
   } else {
     handleProjectSelection(element);
-    handleProjectFiltering(element);
+    filterProject(element);
   }
 });

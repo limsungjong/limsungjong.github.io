@@ -4,7 +4,7 @@ const handleProjectSelection = (element) => {
     selected === null || selected === void 0 ? void 0 : selected.classList.remove("selected");
     element.classList.add("selected");
 };
-const handleProjectFiltering = (element) => {
+const filterProject = (element) => {
     const projects = document.querySelectorAll(".project");
     const projectsContainer = document.querySelector(".projects");
     projectsContainer === null || projectsContainer === void 0 ? void 0 : projectsContainer.classList.add("animation-out");
@@ -16,6 +16,9 @@ const handleProjectFiltering = (element) => {
         else {
             e.style.display = "none";
         }
+        if (e.dataset.type === "empty") {
+            e.style.display = "block";
+        }
     });
     setTimeout(() => {
         projectsContainer === null || projectsContainer === void 0 ? void 0 : projectsContainer.classList.remove("animation-out");
@@ -24,11 +27,11 @@ const handleProjectFiltering = (element) => {
 const projectButtons = document.querySelector(".buttons");
 projectButtons === null || projectButtons === void 0 ? void 0 : projectButtons.addEventListener("click", (evt) => {
     const element = evt.target;
-    if (element == undefined) {
+    if (element == undefined || element.classList.contains("buttons")) {
         return;
     }
     else {
         handleProjectSelection(element);
-        handleProjectFiltering(element);
+        filterProject(element);
     }
 });

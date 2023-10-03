@@ -67,3 +67,55 @@ navHomeElement?.addEventListener("click", () => {
     headerElement.classList.add("hide");
   }
 });
+
+const obs = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        activeNavMenu(e.target.id);
+      }
+    });
+  },
+  { threshold: 0.5 },
+);
+const proObs = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        activeNavMenu(e.target.id);
+      }
+    });
+  },
+  { threshold: 0.9 },
+);
+const contactObs = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        activeNavMenu(e.target.id);
+      }
+    });
+  },
+  {
+    threshold: 0.8,
+  },
+);
+
+obs.observe(document.querySelector("#home") as HTMLTableSectionElement);
+obs.observe(document.querySelector("#about") as HTMLTableSectionElement);
+obs.observe(document.querySelector("#journeys") as HTMLTableSectionElement);
+obs.observe(document.querySelector("#skills") as HTMLTableSectionElement);
+proObs.observe(document.querySelector("#projects") as HTMLTableSectionElement);
+contactObs.observe(
+  document.querySelector("#contact") as HTMLTableSectionElement,
+);
+
+const activeNavMenu = (filter: string) => {
+  navElement.querySelectorAll("a").forEach((element) => {
+    if (element.dataset.text === filter) {
+      element.classList.add("active");
+    } else {
+      element.classList.remove("active");
+    }
+  });
+};

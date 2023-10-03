@@ -58,3 +58,42 @@ navHomeElement === null || navHomeElement === void 0 ? void 0 : navHomeElement.a
         headerElement.classList.add("hide");
     }
 });
+const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+        if (e.isIntersecting) {
+            activeNavMenu(e.target.id);
+        }
+    });
+}, { threshold: 0.5 });
+const proObs = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+        if (e.isIntersecting) {
+            activeNavMenu(e.target.id);
+        }
+    });
+}, { threshold: 0.9 });
+const contactObs = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+        if (e.isIntersecting) {
+            activeNavMenu(e.target.id);
+        }
+    });
+}, {
+    threshold: 0.8,
+});
+obs.observe(document.querySelector("#home"));
+obs.observe(document.querySelector("#about"));
+obs.observe(document.querySelector("#journeys"));
+obs.observe(document.querySelector("#skills"));
+proObs.observe(document.querySelector("#projects"));
+contactObs.observe(document.querySelector("#contact"));
+const activeNavMenu = (filter) => {
+    navElement.querySelectorAll("a").forEach((element) => {
+        if (element.dataset.text === filter) {
+            element.classList.add("active");
+        }
+        else {
+            element.classList.remove("active");
+        }
+    });
+};

@@ -1,16 +1,10 @@
-const projectButtons = document.querySelector(".buttons");
-
-const projectButtonClick = (element: HTMLElement | undefined) => {
-  if (element == undefined) {
-    return;
-  }
-
-  // 프로젝트 버튼 클릭시 button에 따라 selected 추가 제거
+const handleProjectSelection = (element: HTMLElement) => {
   const selected = projectButtons?.querySelector(".selected");
   selected?.classList.remove("selected");
   element.classList.add("selected");
+};
 
-  // 프로젝트 버튼 클릭시 button에 따라 카테고리에 맞춰 프로젝트 추가 제거
+const handleProjectFiltering = (element: HTMLElement) => {
   const projects: NodeListOf<HTMLDivElement> =
     document.querySelectorAll(".project");
   const projectsContainer = document.querySelector(".projects");
@@ -31,11 +25,13 @@ const projectButtonClick = (element: HTMLElement | undefined) => {
   }, 250);
 };
 
+const projectButtons = document.querySelector(".buttons");
 projectButtons?.addEventListener("click", (evt) => {
   const element = evt.target as HTMLButtonElement | null;
   if (element == undefined) {
     return;
   } else {
-    projectButtonClick(element);
+    handleProjectSelection(element);
+    handleProjectFiltering(element);
   }
 });

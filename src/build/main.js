@@ -46,7 +46,7 @@ document.addEventListener("scroll", () => {
 // home 스크롤 이벤트(페이지 아래로 내리면 홈 섹션 투명도 조절)
 const homeElement = document.querySelector("#home .container");
 document.addEventListener("scroll", () => {
-    homeElement.style.opacity = calOpacity(window.scrollY, AllElementsRect.home.top, AllElementsRect.home.height).toFixed(2);
+    homeElement.style.opacity = calOpacity(window.scrollY, AllElementsRect.header.top, AllElementsRect.home.height).toFixed(2);
 });
 function calOpacity(scrollY, minScroll, maxScroll) {
     const scrollRatio = 1 - (scrollY - minScroll) / (maxScroll - minScroll);

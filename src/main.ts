@@ -70,7 +70,7 @@ const homeElement = document.querySelector(
 document.addEventListener("scroll", () => {
   homeElement.style.opacity = calOpacity(
     window.scrollY,
-    AllElementsRect.home.top,
+    AllElementsRect.header.top,
     AllElementsRect.home.height,
   ).toFixed(2);
 });

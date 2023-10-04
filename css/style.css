@@ -678,4 +678,25 @@ button:focus {
   opacity: 0;
 }
 
+/* ===== Scrollbar CSS ===== */ /* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #8f54a0 #ffffff;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 16px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #1b1e26;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #fd6413;
+  border-radius: 10px;
+  border: 3px solid #050a13;
+}
+
 /*# sourceMappingURL=style.css.map */

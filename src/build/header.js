@@ -24,6 +24,7 @@ menuToggleElement.addEventListener("click", (e) => {
         headerElement.classList.add("hide");
     }
 });
+// @ts-ignore
 const navElement = document.querySelector(".nav");
 navElement.addEventListener("click", (evt) => {
     var _a;
@@ -39,28 +40,5 @@ const navHomeElement = document.querySelector("a[data-text='home']");
 navHomeElement === null || navHomeElement === void 0 ? void 0 : navHomeElement.addEventListener("click", () => {
     if (!headerElement.classList.contains("hide")) {
         headerElement.classList.add("hide");
-    }
-});
-const activeNavMenu = (filter) => {
-    navElement.querySelectorAll("a").forEach((element) => {
-        if (element.dataset.text === filter) {
-            element.classList.add("active");
-        }
-        else {
-            element.classList.remove("active");
-        }
-    });
-};
-Object.keys(AllSectionsThreshold).forEach((key) => {
-    const obs = new IntersectionObserver((entries) => {
-        entries.forEach((e) => {
-            if (e.isIntersecting) {
-                activeNavMenu(e.target.id);
-            }
-        });
-    }, AllSectionsThreshold[key]);
-    const section = document.querySelector(`#${key}`);
-    if (section) {
-        obs.observe(section);
     }
 });

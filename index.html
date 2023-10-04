@@ -37,6 +37,7 @@
     <script type="module" src="./src/build/projects.js" defer></script>
     <script type="module" src="./src/build/skill.js" defer></script>
     <script type="module" src="./src/build/header.js" defer></script>
+    <script type="module" src="./src/build/activeNavMenu.js" defer></script>
   </head>
   <body>
     <!--  header  -->
@@ -63,22 +64,22 @@
       <nav class="nav" id="nav">
         <ul class="menu">
           <li>
-            <a data-text="home" class="item active">Home</a>
+            <a data-text="home" class="item active" href="#home">Home</a>
           </li>
           <li>
-            <a data-text="about" class="item">About</a>
+            <a data-text="about" class="item" href="#about">About</a>
           </li>
           <li>
-            <a data-text="journeys" class="item">Journey</a>
+            <a data-text="journeys" class="item" href="#journeys">Journey</a>
           </li>
           <li>
-            <a data-text="skills" class="item">Skills</a>
+            <a data-text="skills" class="item" href="#skills">Skills</a>
           </li>
           <li>
-            <a data-text="projects" class="item">Project</a>
+            <a data-text="projects" class="item" href="#projects">Project</a>
           </li>
           <li>
-            <a data-text="contact" class="item">Contact</a>
+            <a data-text="contact" class="item" href="#contact">Contact</a>
           </li>
         </ul>
       </nav>
@@ -95,7 +96,7 @@
           />
           <h2 class="title">
             안녕하세요!<br />
-            <strong class="strong">웹 개발자</strong> 임성종입니다.
+            <strong class="strong">Web Developer</strong> 임성종입니다.
           </h2>
           <p class="description">
             인천에서 거주중이며, 주니어 개발자로서 다양한 경험을 통하여 성장하고
@@ -107,7 +108,12 @@
       <!--   main about   -->
       <section id="about" class="section max-container">
         <h2 class="title">About Me</h2>
-        <p class="description">웹 개발자로서</p>
+        <p class="description">
+          웹 개발자로서 다양한 역량을 갖추기 위해 프론트, 백 엔드 스킬을
+          학습하였습니다. <br />
+          새로운 기술이나 스킬에 대해 호기심을 가지고 있으며 배우고자 하는
+          자세를 가지고 성장하고 있습니다. <br />
+        </p>
         <ul class="majors">
           <li class="major">
             <i class="fab fa-html5 icon"></i>
@@ -336,8 +342,11 @@
                   class="image"
                 />
                 <div class="metadata">
-                  <h3 class="title">Empty</h3>
-                  <p class="description">Empty</p>
+                  <h3 class="title">Van Portfolio</h3>
+                  <p class="description">
+                    포트폴리오 <br />
+                    with HTML, CSS, Type Script
+                  </p>
                 </div>
               </a>
             </li>
@@ -372,7 +381,7 @@
       </section>
       <!--   main arrow up   -->
       <aside class="arrowUp hide">
-        <a href="" title="back_to_top">
+        <a title="back_to_top">
           <i class="fas fa-arrow-up"></i>
         </a>
       </aside>

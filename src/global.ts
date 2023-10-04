@@ -8,10 +8,6 @@ type AllSections<T> = {
   contact: T;
 };
 
-type AllSectionsThreshold = {
-  [key: string]: IntersectionObserverInit;
-};
-
 const AllSectionsRect: Readonly<AllSections<DOMRect>> = {
   header: (
     document.querySelector(".header") as HTMLDivElement
@@ -34,13 +30,4 @@ const AllSectionsRect: Readonly<AllSections<DOMRect>> = {
   contact: (
     document.querySelector("#contact") as HTMLDivElement
   ).getBoundingClientRect(),
-};
-
-const AllSectionsThreshold: AllSectionsThreshold = {
-  home: { threshold: 0.7 },
-  about: { threshold: 0.5 },
-  journeys: { threshold: 0.3 },
-  skills: { threshold: 0.5 },
-  projects: { threshold: 0.9 },
-  contact: { threshold: 0.8 },
 };

@@ -504,6 +504,7 @@ button:focus {
   align-items: center;
   transition: all 250ms ease-in;
   transform: translateY(-10px);
+  pointer-events: auto;
 }
 #projects .projects .project .metadata .title {
   font-size: 1.1rem;

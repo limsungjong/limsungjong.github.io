@@ -38,3 +38,13 @@ projectButtons?.addEventListener("click", (evt) => {
     filterProject(element);
   }
 });
+
+document.querySelectorAll('li[data-type="empty"]').forEach((e) => {
+  const element = e as HTMLLIElement;
+  if (element) {
+    element.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+    });
+  }
+});

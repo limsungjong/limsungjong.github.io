@@ -35,3 +35,12 @@ projectButtons === null || projectButtons === void 0 ? void 0 : projectButtons.a
         filterProject(element);
     }
 });
+document.querySelectorAll('li[data-type="empty"]').forEach((e) => {
+    const element = e;
+    if (element) {
+        element.addEventListener("click", (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+        });
+    }
+});

@@ -16,6 +16,13 @@ $color-accent: $color-blue;
 $color-accent-variant: $color-orange;
 $color-text: $color-white;
 
+/*            Background           */
+$home-bg-gradient: linear-gradient(
+  180deg,
+  rgba(8, 7, 37, 1) 0%,
+  rgba(5, 10, 19, 1) 100%
+);
+
 /*            App Size            */
 $size-max-width: 1200px;
 $size-inner-max-width: 800px;
@@ -228,11 +235,11 @@ button:focus {
 
 /*            Home            */
 #home {
-  background-color: $color-primary;
   color: $color-text;
   padding: 7rem 1rem 5rem;
   text-align: center;
   position: relative;
+  background: $color-primary $home-bg-gradient;
 
   .profile-image {
     width: 250px;

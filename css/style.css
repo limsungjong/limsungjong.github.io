@@ -1,6 +1,7 @@
 /*            Global            */
 /*            Colors            */
 /*            App Colors            */
+/*            Background           */
 /*            App Size            */
 html {
   scroll-behavior: smooth;
@@ -185,11 +186,11 @@ button:focus {
 /*            Main            */
 /*            Home            */
 #home {
-  background-color: #050a13;
   color: #ffffff;
   padding: 7rem 1rem 5rem;
   text-align: center;
   position: relative;
+  background: #050a13 linear-gradient(180deg, rgb(8, 7, 37) 0%, rgb(5, 10, 19) 100%);
 }
 #home .profile-image {
   width: 250px;

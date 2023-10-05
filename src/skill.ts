@@ -33,7 +33,7 @@ const javaScriptBar = skillsElement.querySelector(
 const reactBar = skillsElement.querySelector(".react") as HTMLDivElement;
 
 const fillGaugeSkillBarObs = new IntersectionObserver(
-  (entries, observer) => {
+  (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         fillGauge(javaBar, 80, 1000);

@@ -21,7 +21,7 @@ const springBar = skillsElement.querySelector(".spring");
 const mySQLBar = skillsElement.querySelector(".mySQL");
 const javaScriptBar = skillsElement.querySelector(".javaScript");
 const reactBar = skillsElement.querySelector(".react");
-const fillGaugeSkillBarObs = new IntersectionObserver((entries, observer) => {
+const fillGaugeSkillBarObs = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
             fillGauge(javaBar, 80, 1000);

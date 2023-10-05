@@ -35,6 +35,9 @@
       src="https://kit.fontawesome.com/8e31ecfd50.js"
       crossorigin="anonymous"
     ></script>
+    <!--  TypeIt  -->
+    <script src="https://unpkg.com/typeit@8.0.1/dist/index.umd.js"></script>
+
     <!--  CSS  -->
     <link rel="stylesheet" href="./css/style.css" />
     <!--  Java Script  -->
@@ -44,6 +47,7 @@
     <script type="module" src="./src/build/skill.js" defer></script>
     <script type="module" src="./src/build/header.js" defer></script>
     <script type="module" src="./src/build/activeNavMenu.js" defer></script>
+    <script type="module" src="./src/build/typeEffect.js" defer></script>
   </head>
   <body>
     <!--  header  -->
@@ -95,21 +99,30 @@
     <main>
       <!--   main home   -->
       <section id="home" class="home">
-        <div class="container">
+        <div class="max-container container">
           <img
             class="profile-image"
-            src="./images/KakaoTalk_20230516_221725239.jpg"
+            src="images/profile__image-removebg-preview.png"
             alt="profile_img"
           />
-          <h2 class="title">
-            안녕하세요!<br />
-            <strong class="strong">Web Developer</strong> 임성종입니다.
-          </h2>
-          <p class="description">
-            인천에서 거주중이며, 주니어 개발자로서 다양한 경험을 통하여 성장하고
-            있습니다.
-          </p>
-          <a class="contact-button" href="#contact">Contact Me</a>
+          <div>
+            <h2
+              class="title"
+              aria-label="안녕하세요! 주니어 웹 개발자 임성종 입니다."
+            >
+              안녕하세요!<br />
+              <strong class="strong"></strong> <br />
+              <strong class="name">임성종</strong>
+              입니다.
+            </h2>
+            <h2 id="myElement"></h2>
+
+            <p class="description">
+              인천에서 거주중이며, 주니어 개발자로서 다양한 경험을 통하여
+              성장하고 있습니다.
+            </p>
+            <a class="contact-button" href="#contact">Contact Me</a>
+          </div>
         </div>
       </section>
       <!--   main about   -->
@@ -347,7 +360,7 @@
             <li data-type="front" class="project">
               <a href="#" target="_blank">
                 <img
-                  src="./images/empty_image.png"
+                  src="./images/complete-web-portfolio.gif"
                   alt="project_image"
                   class="image"
                 />
@@ -357,19 +370,6 @@
                     포트폴리오 <br />
                     with HTML, CSS, Type Script
                   </p>
-                </div>
-              </a>
-            </li>
-            <li data-type="empty" class="project">
-              <a href="#" target="_blank">
-                <img
-                  src="./images/empty_image.png"
-                  alt="project_image"
-                  class="image"
-                />
-                <div class="metadata">
-                  <h3 class="title">Empty</h3>
-                  <p class="description">Empty</p>
                 </div>
               </a>
             </li>

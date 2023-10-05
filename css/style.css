@@ -43,7 +43,7 @@ button {
 }
 
 button:focus {
-  outline: 1px solid #03e8f9;
+  outline: 1px solid #fff395;
 }
 
 /*           Common          */
@@ -64,7 +64,7 @@ button:focus {
 
 .accent {
   font-size: 1.5rem;
-  color: #03e8f9;
+  color: #fff395;
 }
 
 .accent:hover {
@@ -83,7 +83,7 @@ button:focus {
 
 /*            Header            */
 .header {
-  background-color: #001524;
+  background-color: #361500;
   position: fixed;
   top: 0;
   width: 100%;
@@ -168,10 +168,10 @@ button:focus {
   border: 1px solid transparent;
 }
 .header .nav .menu .item:hover {
-  border-bottom: 1px solid #03e8f9;
+  border-bottom: 1px solid #fff395;
 }
 .header .nav .menu .item.active {
-  border: 1px solid #03e8f9;
+  border: 1px solid #fff395;
   border-radius: 4px;
 }
 .header .nav .menu.hide {
@@ -190,13 +190,16 @@ button:focus {
   padding: 7rem 1rem 5rem;
   text-align: center;
   position: relative;
-  background: #050a13 linear-gradient(180deg, rgb(8, 7, 37) 0%, rgb(5, 10, 19) 100%);
+  background: #1c0a00 linear-gradient(180deg, rgb(28, 10, 0) 0%, rgb(5, 10, 19) 100%);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cdefs%3E%3ClinearGradient id='a' x1='0' x2='0' y1='1' y2='0' gradientTransform='rotate(189,0.5,0.5)'%3E%3Cstop offset='0' stop-color='%2303E8F9'/%3E%3Cstop offset='1' stop-color='%23CF6'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' x1='0' x2='0' y1='0' y2='1' gradientTransform='rotate(75,0.5,0.5)'%3E%3Cstop offset='0' stop-color='%23FF4C29'/%3E%3Cstop offset='1' stop-color='%23CC9544'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='%23FFF' fill-opacity='0' stroke-miterlimit='10'%3E%3Cg stroke='url(%23a)' stroke-width='14.19'%3E%3Cpath transform='translate(-51.8 -1.5999999999999996) rotate(-4.6 1409 581) scale(0.9465600000000001)' d='M1409 581 1450.35 511 1490 581z'/%3E%3Ccircle stroke-width='4.73' transform='translate(-80 44) rotate(1.2000000000000002 800 450) scale(0.99788)' cx='500' cy='100' r='40'/%3E%3Cpath transform='translate(1.1999999999999993 -24) scale(0.99788)' d='M400.86 735.5h-83.73c0-23.12 18.74-41.87 41.87-41.87S400.86 712.38 400.86 735.5z'/%3E%3C/g%3E%3Cg stroke='url(%23b)' stroke-width='4.3'%3E%3Cpath transform='translate(264 6.4) rotate(-1.6 150 345) scale(1.00352)' d='M149.8 345.2 118.4 389.8 149.8 434.4 181.2 389.8z'/%3E%3Crect stroke-width='9.46' transform='translate(-44 -122) rotate(-14.400000000000006 1089 759)' x='1039' y='709' width='100' height='100'/%3E%3Cpath transform='translate(-129.6 30.4) rotate(-2.4000000000000004 1400 132) scale(0.88)' d='M1426.8 132.4 1405.7 168.8 1363.7 168.8 1342.7 132.4 1363.7 96 1405.7 96z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-size: cover;
 }
 #home .profile-image {
   width: 250px;
   height: 250px;
   object-fit: cover;
-  border: 3px solid #03e8f9;
+  border: 3px solid #fff395;
   border-radius: 50%;
 }
 #home .title {
@@ -204,14 +207,14 @@ button:focus {
   margin: 1rem;
 }
 #home .title .strong {
-  color: #03e8f9;
+  color: #fff395;
 }
 #home .description {
   font-size: 1.3rem;
 }
 #home .contact-button {
   display: inline-block;
-  background-color: #03e8f9;
+  background-color: #fff395;
   margin: 2rem;
   padding: 0.5rem 1rem;
   font-weight: bold;
@@ -251,7 +254,7 @@ button:focus {
 }
 #about .majors .major {
   flex: 1;
-  background-color: #1b1e26;
+  background-color: #1c0a00;
   padding: 2rem 1rem;
   color: #ffffff;
   border-radius: 1rem;
@@ -262,7 +265,7 @@ button:focus {
 #about .majors .major .icon {
   font-size: 4rem;
   margin: 1rem 0;
-  color: #03e8f9;
+  color: #fff395;
   transition: all 300ms ease;
 }
 #about .majors .major .title {
@@ -286,16 +289,16 @@ button:focus {
 }
 #about .academy .school .name {
   font-size: 2rem;
-  color: #050a13;
+  color: #1b1e26;
 }
 #about .academy .school .period {
-  color: #050a13;
+  color: #1b1e26;
   font-size: 0.8rem;
 }
 
 /*           Journeys          */
 #journeys {
-  background-color: #1b1e26;
+  background-color: #1c0a00;
   color: #ffffff;
   display: flex;
   flex-direction: column;
@@ -303,7 +306,7 @@ button:focus {
 }
 #journeys .journey {
   margin: 2rem;
-  background-color: #050a13;
+  background-color: #1b1e26;
   border-radius: 8px;
   padding: 2rem 5rem;
   display: flex;
@@ -335,7 +338,7 @@ button:focus {
 }
 #journeys .journey .right .content {
   display: inline-block;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 #journeys .journey .right .content:before {
   content: " * ";
@@ -344,7 +347,7 @@ button:focus {
 }
 #journeys .journey .icon {
   font-size: 3rem;
-  color: #03e8f9;
+  color: #fff395;
   transition: 250ms;
 }
 #journeys .journey:hover .icon {
@@ -361,14 +364,14 @@ button:focus {
   overflow: hidden;
   line-height: 0;
   transform: rotate(180deg);
-  background-color: #050a13;
+  background-color: #1b1e26;
   mask: url('data:image/svg+xml;utf8, <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path></svg>');
   -webkit-mask: url('data:image/svg+xml;utf8, <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path></svg>');
 }
 
 /*            Skills            */
 #skills {
-  background-color: #050a13;
+  background-color: #1b1e26;
   color: #ffffff;
   position: relative;
 }
@@ -381,14 +384,14 @@ button:focus {
   box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
 }
 #skills .skills .title {
-  color: #03e8f9;
+  color: #fff395;
   font-size: 1.5rem;
   margin: 1.2rem 0;
 }
 #skills .skills .mostSkills {
   grid-row: span 2;
   padding: 1rem;
-  background-color: #1b1e26;
+  background-color: #1c0a00;
 }
 #skills .skills .mostSkills .bar {
   display: flex;
@@ -403,20 +406,20 @@ button:focus {
 #skills .skills .mostSkills .bar .bg {
   width: 100%;
   height: 3px;
-  background-color: #050a13;
+  background-color: #1b1e26;
 }
 #skills .skills .mostSkills .bar .value {
   height: 3px;
-  background-color: #03e8f9;
+  background-color: #fff395;
 }
 #skills .skills .otherSkills {
   padding: 1rem;
-  background-color: #1b1e26;
+  background-color: #1c0a00;
   filter: brightness(130%);
 }
 #skills .skills .tools {
   padding: 1rem;
-  background-color: #050a13;
+  background-color: #1b1e26;
   filter: brightness(130%);
 }
 
@@ -432,12 +435,12 @@ button:focus {
 }
 #projects .buttons .button {
   width: 100%;
-  background-color: #001524;
+  background-color: #361500;
   color: #ffffff;
   font-size: 1.2rem;
   padding: 0.5rem 1.5rem;
   margin: 0 1rem;
-  border: 1px solid #03e8f9;
+  border: 1px solid #fff395;
   border-radius: 4px;
   cursor: pointer;
   display: flex;
@@ -458,8 +461,8 @@ button:focus {
   pointer-events: none;
 }
 #projects .buttons .selected {
-  background-color: #03e8f9;
-  color: #050a13;
+  background-color: #fff395;
+  color: #1b1e26;
 }
 #projects .buttons .selected .count {
   transform: none;
@@ -519,7 +522,7 @@ button:focus {
   margin: 0.5rem 0;
   width: 50px;
   height: 2px;
-  background-color: #03e8f9;
+  background-color: #fff395;
 }
 #projects .projects .project .metadata:hover {
   opacity: 0.8;
@@ -536,11 +539,11 @@ button:focus {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 60px;
+  height: 30px;
   overflow: hidden;
   line-height: 0;
   transform: rotate(180deg);
-  background-color: #050a13;
+  background-color: #1b1e26;
   mask: url('data:image/svg+xml;utf8,<svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M1200,0H0V120H281.94C572.9,116.24,602.45,3.86,602.45,3.86h0S632,116.24,923,120h277Z" class="shape-fill"></path></svg>');
   -webkit-mask: url('data:image/svg+xml;utf8,<svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M1200,0H0V120H281.94C572.9,116.24,602.45,3.86,602.45,3.86h0S632,116.24,923,120h277Z" class="shape-fill"></path></svg>');
 }
@@ -561,19 +564,19 @@ button:focus {
   cursor: pointer;
   text-align: center;
   border-radius: 100%;
-  background-color: #001524;
+  background-color: #361500;
   position: fixed;
   bottom: 3rem;
   right: 3rem;
   font-size: 3rem;
   width: 4.5rem;
   height: 4.5rem;
-  box-shadow: 3px 3px 0 0 #03e8f9;
+  box-shadow: 3px 3px 0 0 #fff395;
 }
 
 /*            Footer            */
 #contact {
-  background-color: #050a13;
+  background-color: #1b1e26;
   color: #ffffff;
 }
 #contact .links {
@@ -583,10 +586,10 @@ button:focus {
 }
 #contact .links .link {
   gap: 1rem;
-  font-size: 2rem;
+  font-size: 3rem;
 }
 #contact .links .link:hover .icon {
-  color: #03e8f9;
+  color: #fff395;
 }
 
 /*            Media Query            */
@@ -639,6 +642,8 @@ button:focus {
   /*            Home            */
   #home {
     padding-bottom: 2.5rem;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cdefs%3E%3ClinearGradient id='a' x1='0' x2='0' y1='1' y2='0' gradientTransform='rotate(189,0.5,0.5)'%3E%3Cstop offset='0' stop-color='%2303E8F9'/%3E%3Cstop offset='1' stop-color='%23CF6'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' x1='0' x2='0' y1='0' y2='1' gradientTransform='rotate(75,0.5,0.5)'%3E%3Cstop offset='0' stop-color='%23FF4C29'/%3E%3Cstop offset='1' stop-color='%23CC9544'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='%23FFF' fill-opacity='0' stroke-miterlimit='10'%3E%3Cg stroke='url(%23a)' stroke-width='14.19'%3E%3Cpath transform='translate(-174.3 26.4) rotate(12.9 1409 581) scale(1.0115200000000002)' d='M1409 581 1450.35 511 1490 581z'/%3E%3Ccircle stroke-width='4.73' transform='translate(-150 114) rotate(22.2 800 450) scale(1.03246)' cx='500' cy='100' r='40'/%3E%3Cpath transform='translate(64.2 -234) rotate(210 401 736) scale(1.03246)' d='M400.86 735.5h-83.73c0-23.12 18.74-41.87 41.87-41.87S400.86 712.38 400.86 735.5z'/%3E%3C/g%3E%3Cg stroke='url(%23b)' stroke-width='4.3'%3E%3Cpath transform='translate(684 -21.6) rotate(5.4 150 345) scale(0.93184)' d='M149.8 345.2 118.4 389.8 149.8 434.4 181.2 389.8z'/%3E%3Crect stroke-width='9.46' transform='translate(-324 -297) rotate(237.6 1089 759)' x='1039' y='709' width='100' height='100'/%3E%3Cpath transform='translate(-549.6 170.4) rotate(39.6 1400 132) scale(0.88)' d='M1426.8 132.4 1405.7 168.8 1363.7 168.8 1342.7 132.4 1363.7 96 1405.7 96z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-position: 37% 0;
   }
   #home .title {
     font-size: 2rem;
@@ -684,10 +689,16 @@ button:focus {
     width: auto;
   }
   #journeys .journey .right .description {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
   #journeys .journey .right .icon {
     transition: none;
+  }
+  #journeys .journey .right .content {
+    font-size: 0.9rem;
+  }
+  #journeys::after {
+    height: 35px;
   }
   /*            Skills            */
   #skills .skills {
@@ -747,33 +758,13 @@ button:focus {
 }
 
 *::-webkit-scrollbar-track {
-  background: #1b1e26;
+  background: #1c0a00;
 }
 
 *::-webkit-scrollbar-thumb {
   background-color: #fd6413;
   border-radius: 10px;
-  border: 3px solid #050a13;
-}
-
-.custom-shape-divider-top-1696472666 {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-}
-
-.custom-shape-divider-top-1696472666 svg {
-  position: relative;
-  display: block;
-  width: 100%;
-  height: 60px;
-}
-
-.custom-shape-divider-top-1696472666 .shape-fill {
-  fill: #1b1e26;
+  border: 3px solid #1b1e26;
 }
 
 /*# sourceMappingURL=style.css.map */

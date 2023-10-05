@@ -24,30 +24,38 @@ const fillGauge = (
   requestAnimationFrame(animate);
 };
 
-const skillSectionObs = new IntersectionObserver(
-  (entries) => {
+const javaBar = skillsElement.querySelector(".java") as HTMLDivElement;
+const springBar = skillsElement.querySelector(".spring") as HTMLDivElement;
+const mySQLBar = skillsElement.querySelector(".mySQL") as HTMLDivElement;
+const javaScriptBar = skillsElement.querySelector(
+  ".javaScript",
+) as HTMLDivElement;
+const reactBar = skillsElement.querySelector(".react") as HTMLDivElement;
+
+const fillGaugeSkillBarObs = new IntersectionObserver(
+  (entries, observer) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        fillGauge(document.querySelector(".java") as HTMLDivElement, 80, 1000);
+        fillGauge(javaBar, 80, 1000);
 
-        fillGauge(
-          document.querySelector(".spring") as HTMLDivElement,
-          75,
-          1000,
-        );
+        fillGauge(springBar, 75, 1000);
 
-        fillGauge(document.querySelector(".mySQL") as HTMLDivElement, 70, 1000);
+        fillGauge(mySQLBar, 70, 1000);
 
-        fillGauge(
-          document.querySelector(".javaScript") as HTMLDivElement,
-          80,
-          1000,
-        );
+        fillGauge(javaScriptBar, 80, 1000);
 
-        fillGauge(document.querySelector(".react") as HTMLDivElement, 60, 1000);
+        fillGauge(reactBar, 60, 1000);
+      } else {
+        javaBar.style.width = "0";
+        springBar.style.width = "0";
+        mySQLBar.style.width = "0";
+        javaScriptBar.style.width = "0";
+        reactBar.style.width = "0";
       }
     });
   },
-  { threshold: 0.8 },
+
+  { threshold: 0.5 },
 );
-skillSectionObs.observe(skillsElement);
+
+fillGaugeSkillBarObs.observe(skillsElement);

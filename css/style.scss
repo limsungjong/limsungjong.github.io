@@ -734,6 +734,10 @@ button:focus {
   background-color: $color-primary;
   color: $color-text;
 
+  .description:hover {
+    color: $color-blue;
+  }
+
   .links {
     display: flex;
     padding: 1rem;

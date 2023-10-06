@@ -597,6 +597,10 @@ button:focus {
   background-color: #1e1e20;
   color: #ffffff;
 }
+#contact .description:hover {
+  transform: scale(5);
+  color: #03e8f9;
+}
 #contact .links {
   display: flex;
   padding: 1rem;

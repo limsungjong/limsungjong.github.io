@@ -336,6 +336,12 @@ button:focus {
 #about {
   position: relative;
 
+  .description {
+    max-width: 860px;
+    text-align: center;
+    display: inline-block;
+  }
+
   .majors {
     display: flex;
     justify-content: space-between;
@@ -820,7 +826,8 @@ button:focus {
       .title {
         font-size: 2rem;
         padding-bottom: 0.5rem;
-        min-height: 12rem;
+        min-height: 14rem;
+        margin: 1rem 0 0;
       }
 
       .description {
@@ -840,9 +847,13 @@ button:focus {
       font-size: 1.1rem;
     }
 
-    .major {
-      max-width: 25rem;
-      padding: 1.2rem;
+    .majors {
+      margin: 0.5rem 0;
+
+      .major {
+        max-width: 25rem;
+        padding: 1.2rem;
+      }
     }
   }
 

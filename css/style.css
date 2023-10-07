@@ -598,7 +598,6 @@ button:focus {
   color: #ffffff;
 }
 #contact .description:hover {
-  transform: scale(5);
   color: #03e8f9;
 }
 #contact .links {
@@ -682,9 +681,6 @@ button:focus {
     padding-bottom: 0.5rem;
     min-height: 14rem;
     margin: 1rem 0 0;
-  }
-  #home .container .description {
-    font-size: 1rem;
   }
   /*            About            */
   #about .majors {
